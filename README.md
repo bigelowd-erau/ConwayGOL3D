@@ -1,2 +1,2 @@
 # ConwayGOL3D
- A 3D implementation of Conway's Game of Life
+ 3D version of conway's game of life in unity
