@@ -343,13 +343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb1f70c7f12ea634bb9badccfbbf051a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dims: 20
+  dims: 30
   Cell: {fileID: 3358197929055424295, guid: 2440d24d65060a84a9051adef67bb5e3, type: 3}
-  simulationFrequency: 0.1
-  livingThreshold: 0.5
-  minPopulation: 3
-  maxPopulation: 4
-  repopPopulation: 4
+  simulationFrequency: 0.5
+  livingThreshold: 0.55
+  minPopulation: 2
+  maxPopulation: 3
+  repopPopulation: 3
 --- !u!4 &1166161102
 Transform:
   m_ObjectHideFlags: 0

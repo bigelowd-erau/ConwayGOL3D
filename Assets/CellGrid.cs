@@ -80,25 +80,35 @@ public class CellGrid : MonoBehaviour
                             {
                                 /*if (!(x == row && y == col && z == dep))
                                     Debug.Log(x + ", " + y + ", " + z);*/
-                                if (cells[x][y][z].activeSelf/* && !(x == row && y == col && z == dep)*/)
+                                if (cells[x][y][z].activeSelf && !(x == row && y == col && z == dep))
                                 {
                                     //Debug.Log("Found Neighbor");
                                     ++neighbors;
+
                                 }
                             }
                         }
                     }
 
                     if (neighbors < minPopulation || neighbors > maxPopulation)
-                        cells[row][col][dep].SetActive(false);
+                        cells[row][col][dep].GetComponent<Cell>().nextAliveState = false;
                     else if (neighbors == repopPopulation)
-                        cells[row][col][dep].SetActive(true);
+                        cells[row][col][dep].GetComponent<Cell>().nextAliveState = true;
                     /*if (neighbors != 0)
                         Debug.Log("Neighbors:" + neighbors);*/
 
                 }
             }
         }
+        for (int row = 0; row < dims; ++row)
+        {
+            for (int col = 0; col < dims; ++col)
+            {
+                for (int dep = 0; dep < dims; ++dep)
+                {
+                    cells[row][col][dep].SetActive(cells[row][col][dep].GetComponent<Cell>().nextAliveState);
+                }
+            }
+        }
     }
-    
 }
